@@ -40,11 +40,6 @@ jobs:
         with:
             username: ${{ secrets.REGISTRY_USERNAME }}
             password: ${{ secrets.REGISTRY_PASSWORD }}
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Build and push image
         env:
           CONTAINER_IMAGE: ${{env.REPO}}:${{github.sha}}
@@ -55,3 +50,8 @@ jobs:
           docker build -t  $CONTAINER_IMAGE -t $CONTAINER_IMAGE_LATEST .  
           docker push $CONTAINER_IMAGE
           docker push $CONTAINER_IMAGE_LATEST
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
