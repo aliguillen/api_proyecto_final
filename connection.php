@@ -1,7 +1,7 @@
 <?php
     $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "";
+    $dbuser = "mysqluser";
+    $dbpass = "secret";
     $db = "proyecto_final";
     $con = mysqli_connect($dbhost, $dbuser, $dbpass , $db) or die($con);
 ?>
