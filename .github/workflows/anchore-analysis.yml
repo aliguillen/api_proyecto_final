@@ -28,7 +28,7 @@ jobs:
       id: scan
       with:
         image: ${{env.REPO}}:${{github.sha}}
-        grype-version: 0.12.1
+        grype-version: 0.13.0
         acs-report-enable: true
         fail-build: false
         severity-cutoff: critical
