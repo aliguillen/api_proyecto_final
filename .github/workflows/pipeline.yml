@@ -54,12 +54,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      #php-unit
-      - name: Composer
-        uses: php-actions/composer@v5      
-        env:
-          TEST_NAME: aliguillen
-      - name: PHPUnit Tests
-        uses: php-actions/phpunit@v2
+     
       
       
