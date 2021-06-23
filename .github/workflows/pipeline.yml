@@ -41,7 +41,7 @@ jobs:
             password: ${{ secrets.REGISTRY_PASSWORD }}
       - name: Build and push image
         env:
-          CONTAINER_IMAGE: ${{env.REPO}}:${{github.sha}}
+          CONTAINER_IMAGE: "aliguillen/api_proyecto_final:latest"
           CONTAINER_IMAGE_LATEST: "${{ env.REPO }}:latest"
           network: my-net  
 
