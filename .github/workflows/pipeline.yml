@@ -25,16 +25,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      #php-unit
-      - uses: php-actions/composer@v5
-      - name: PHPUnit Tests
-        uses: php-actions/phpunit@v2
-        env:
-          TEST_NAME: aliguillen
-        with:
-          bootstrap: vendor/autoload.php
-          configuration: test/phpunit.xml
-          args: --coverage-text
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo api_proyecto_final
@@ -64,3 +54,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #php-unit
+      - name: PHPUnit Tests
+      - uses: php-actions/composer@v5
+      - uses: php-actions/phpunit@v2
+        env:
+          TEST_NAME: aliguillen
+        with:
+          bootstrap: vendor/autoload.php
+          configuration: test/phpunit.xml
+          args: --coverage-text
