@@ -56,14 +56,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       #php-unit
       - name: Composer
-        uses: php-actions/composer@v5
-      
+        uses: php-actions/composer@v5      
         env:
           TEST_NAME: aliguillen
-        with:
-          bootstrap: vendor/autoload.php
-          configuration: test/phpunit.xml
-          args: --coverage-text          
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v2
       
