@@ -27,7 +27,7 @@ jobs:
       uses: anchore/scan-action@v2
       id: scan
       with:
-        image: ${{env.REPO}}:${{github.sha}}
+        image: "aliguillen/api_proyecto_final:latest"
         grype-version: 0.13.0
         acs-report-enable: true
         fail-build: false
