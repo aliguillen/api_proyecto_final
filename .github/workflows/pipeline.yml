@@ -43,7 +43,6 @@ jobs:
         env:
           CONTAINER_IMAGE: "aliguillen/api_proyecto_final:latest"
           CONTAINER_IMAGE_LATEST: "${{ env.REPO }}:latest"
-          network: my-net  
 
         run: |
           docker build -t  $CONTAINER_IMAGE -t $CONTAINER_IMAGE_LATEST .  
