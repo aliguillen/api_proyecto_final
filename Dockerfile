@@ -1,6 +1,5 @@
-FROM ubuntu:20.04
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends mysql-client \
-    && rm -rf /var/lib/apt/lists/*
-ENTRYPOINT ["mysql"]
-EXPOSE 8080
+FROM php:8.0-apache
+WORKDIR /var/www/html
+COPY index.php index.php
+COPY api.php api.php
+EXPOSE 80
