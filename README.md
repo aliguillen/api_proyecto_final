@@ -9,3 +9,4 @@ Incluye:
 - Pipeline CI/CD con Github Actions.
 - Sonarqube analisis 
 - Test en anchore
+- Test on pull request 
